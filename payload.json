@@ -1,0 +1,9 @@
+{
+    "max_token" : 512,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Explain Why is apple good for you? ### Response: "
+        }
+    ]
+}
