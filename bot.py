@@ -30,8 +30,11 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
 
-        if message.content.startswith('!carl'):
-            stripped_message = str(message.content).replace('!ai', '').strip()
+        # if message.content.startswith('!carl'):
+        #     stripped_message = str(message.content).replace('!carl', '').strip()
+        if self.user in message.mentions:
+            stripped_message = message.content.replace(f'<@!{self.user.id}>', '').strip()    
+            
             prompt_message = {
                 "role": "user",
                 "content": f"{stripped_message} ### Responese: " 
